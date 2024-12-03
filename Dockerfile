@@ -7,7 +7,9 @@ RUN apt-get update && apt-get install -y \
     git \
     && rm -rf /var/lib/apt/lists/*
 
+# Set PyTorch CPU-only configuration
 ENV TORCH_INDEX_URL="https://download.pytorch.org/whl/cpu"
+ENV PIP_EXTRA_INDEX_URL="https://download.pytorch.org/whl/cpu"
 
 # Copy only requirements.txt first
 COPY requirements.txt .
